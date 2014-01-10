@@ -38,14 +38,8 @@ object dependencies {
     "org.apache.commons"                %  "commons-compress"          % "1.0"              % "test")
 
   def hadoop(version: String) =
-    if (version.contains("hadoop2")) Seq("org.apache.hadoop" % "hadoop-common"                     % "2.2.0",
-                                         "org.apache.hadoop" % "hadoop-hdfs"                       % "2.2.0",
-                                         "org.apache.hadoop" % "hadoop-mapreduce-client-app"       % "2.2.0",
-                                         "org.apache.hadoop" % "hadoop-mapreduce-client-core"      % "2.2.0",
-                                         "org.apache.hadoop" % "hadoop-mapreduce-client-jobclient" % "2.2.0",
-                                         "org.apache.hadoop" % "hadoop-mapreduce-client-core"      % "2.2.0",
-                                         "org.apache.hadoop" % "hadoop-annotations"                % "2.2.0",
-                                         "org.apache.avro"   % "avro-mapred"                       % "1.7.4" classifier "hadoop2")
+    if (version.contains("cdh5")) Seq("org.apache.hadoop" % "hadoop-client"                     % "2.2.0-cdh5.0.0-beta-1",
+                                      "org.apache.avro"   % "avro-mapred"                       % "1.7.4" classifier "hadoop2")
     else if (version.contains("cdh3")) Seq("org.apache.hadoop" % "hadoop-core"   % "0.20.2-cdh3u6",
                                            "org.apache.avro"   % "avro-mapred"   % "1.7.4")
     else                          Seq("org.apache.hadoop" % "hadoop-client" % "2.0.0-mr1-cdh4.0.1" exclude("asm", "asm"),
