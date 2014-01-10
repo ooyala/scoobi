@@ -1,0 +1,10 @@
+How to publish new versions to Ooyala's internal repository:
+
+1) change version.sbt to "0.8.0.ooyalaN-cdh3"
+2) run 'sbt publish-local'
+3) change version.sbt to "0.8.0.ooyalaN-cdh5"
+4) run 'sbt publish-local'
+5) change version.sbt to "0.8.0.ooyala{N+1}-SNAPSHOT"
+6) manually upload the jars found at ~/.ivy2/local/com.nicta/scoobi_2.10/0.8.0.ooyalaN-{cdh3|cdh5} to nexus using the Web UI
+
+It's not ideal, but I don't want to mess around with the NICTA-specific release configuration in project/build.scala too much.
