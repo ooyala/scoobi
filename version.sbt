@@ -1,1 +1,1 @@
-version in ThisBuild := "0.8.0.ooyala1"
+version in ThisBuild := "0.8.0.ooyala2-SNAPSHOT"
